@@ -6,24 +6,34 @@
     <input type="email" id="inputEmail"
            name="email" placeholder="Informe o seu Email"
            class="form-control mb-2"
-           [(ngModel)]="usuario.email" />
+           [(ngModel)]="usuario.email"
+           #email="ngModel"
+           email
+           required/>
+
+    <div class="alert alert-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+      <div *ngIf="email.errors.required">
+        Email deve ser preenchido
+      </div>
+      <div *ngIf="email.errors.email">
+        Email no formato invalido
+      </div>
+    </div>
 
     <label for="inputSenha" class="sr-only">Senha</label>
     <input type="password" id="inputSenha"
            name="senha" placeholder="Senha"
            class="form-control mb-2"
-           [(ngModel)]="usuario.senha" />
+           [(ngModel)]="usuario.senha"
+           #senha="ngModel"
+           required/>
+    <div class="alert alert-danger" *ngIf="senha.invalid && (senha.dirty || senha.touched)">
+      <div *ngIf="senha.errors.required">
+        Senha deve ser informada
+      </div>
+    </div>
     <button class="btn btn-primary btn-block mb-3" type="submit" (click)="entrar()">Entrar</button>
     <img src="../../../assets/img/quick-b-logo.jpg" />
-
-    <div class="alert alert-primary" role="alert" *ngIf="usuarioAutenticado">
-      Usuario Autenticado !
-    </div>
-
-    <div class="alert alert-warning" role="alert">
-      <div *ngFor="let us of usuarios">
-        {{ us }}
-      </div>       
-    </div>
+        
   </form>
 </div>
