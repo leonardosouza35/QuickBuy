@@ -13,10 +13,10 @@
 
     <div class="alert alert-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
       <div *ngIf="email.errors.required">
-        Email deve ser preenchido
+        Email é de preenchimento obrigatório
       </div>
       <div *ngIf="email.errors.email">
-        Email no formato invalido
+        Email está formato inválido
       </div>
     </div>
 
