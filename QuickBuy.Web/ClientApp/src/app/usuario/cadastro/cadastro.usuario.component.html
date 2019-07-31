@@ -1,10 +1,93 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-</head>
-<body>
+﻿<div class="text-center">
+  <form class="form-signin">
+    <h1 class="h4 mb-2 login">Criar Conta</h1>
 
-</body>
-</html>
+    <label for="inputEmail" class="sr-only">Email</label>
+    <input type="email" id="inputEmail"
+           name="email" placeholder="Email"
+           class="form-control mb-2"
+           [ngClass]="{
+            'is-invalid':email.invalid && (email.dirty || email.touched),
+            'is-valid':email.valid && (email.dirty || email.touched)
+           }"
+           [(ngModel)]="usuario.email"
+           #email="ngModel"
+           email
+           required />
+
+    <div class="invalid-feedback mb-2" *ngIf="email.invalid && (email.dirty || email.touched)">
+      <div *ngIf="email.errors.required">
+        Email é de preenchimento obrigatório
+      </div>
+      <div *ngIf="email.errors.email">
+        Email está no formato inválido
+      </div>
+    </div>
+
+    <label for="inputSenha" class="sr-only">Senha</label>
+    <input type="password" id="inputSenha"
+           name="senha" placeholder="Senha"
+           class="form-control mb-2"
+           #senha="ngModel"
+           [(ngModel)]="usuario.senha"
+           [ngClass]="{
+            'is-invalid':senha.invalid && (senha.dirty || senha.touched),
+            'is-valid':senha.valid && (senha.dirty || senha.touched)
+           }"
+           required />
+    <div class="invalid-feedback mb-2" *ngIf="senha.invalid && (senha.dirty || senha.touched)">
+      <div *ngIf="senha.errors.required">
+        Senha deve ser informada
+      </div>
+    </div>
+
+    <label for="inputNome" class="sr-only">Nome</label>
+    <input type="text" id="inputNome"
+           name="nome" placeholder="Nome"
+           class="form-control mb-2"
+           [ngClass]="{
+            'is-invalid':nome.invalid && (nome.dirty || nome.touched),
+            'is-valid':nome.valid && (nome.dirty || nome.touched)
+           }"
+           [(ngModel)]="usuario.nome"
+           #nome="ngModel"
+           required />
+
+    <div class="invalid-feedback mb-2" *ngIf="nome.invalid && (nome.dirty || nome.touched)">
+      <div *ngIf="nome.errors.required">
+        Nome é de preenchimento obrigatório
+      </div>
+    </div>
+
+    <label for="inputSobreNome" class="sr-only">Sobre Nome</label>
+    <input type="text" id="inputSobreNome"
+           name="sobreNome" placeholder="Sobre Nome"
+           class="form-control mb-2"
+           [ngClass]="{
+            'is-invalid':sobreNome.invalid && (sobreNome.dirty || sobreNome.touched),
+            'is-valid':sobreNome.valid && (sobreNome.dirty || sobreNome.touched)
+           }"
+           [(ngModel)]="usuario.sobreNome"
+           #sobreNome="ngModel"
+           required />
+
+    <div class="invalid-feedback mb-2" *ngIf="sobreNome.invalid && (sobreNome.dirty || sobreNome.touched)">
+      <div *ngIf="sobreNome.errors.required">
+        Sobre Nome é de preenchimento obrigatório
+      </div>
+    </div>
+    <button class="btn btn-primary btn-block mb-3" type="submit" (click)="cadastrar()" [disabled]="ativar_spinner">
+      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="ativar_spinner"></span>
+      Cadastrar
+    </button>
+    <div><a [routerLink]='["/entrar"]'>Voltar</a></div>
+
+    <div class="alert alert-danger" *ngIf="mensagem">
+      {{mensagem}}
+    </div>
+
+    <img src="../../../assets/img/quick-b-logo.jpg" />
+
+  </form>
+</div>
+
