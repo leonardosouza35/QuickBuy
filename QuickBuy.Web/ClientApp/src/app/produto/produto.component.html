@@ -1,4 +1,4 @@
-﻿<h1 class="h4 titulo">Cadastro de Produto</h1>
+<h1 class="h4 titulo">Cadastro de Produto</h1>
 <label for="inputNome" class="sr-only">Nome</label>
 <input type="text" id="inputNome"
        name="nomeProduto"
@@ -48,7 +48,7 @@
 
 <div class="input-group mb-2">
   <div class="custom-file col-md-4">
-    <input type="file" class="custom-file-input" id="inputFile" />
+    <input type="file" class="custom-file-input" id="inputFile" (change)="inputChange($event.target.files)" />
     <label for="inputFile" class="custom-file-label">Escolha uma foto</label>
   </div>
 </div>
