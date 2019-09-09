@@ -38,14 +38,15 @@ export class ProdutoComponent implements OnInit {
   }
 
   public cadastrar() {
-    //this.produtoServico.cadastrar(this.produto)
-    //  .subscribe(
-    //    produtoJson => {
-    //      console.log(produtoJson);          
-    //    },
-    //    e => {
-    //      console.log(e.error);
-    //    } 
-    //  );
+    this.produtoServico.cadastrar(this.produto)
+      .subscribe(
+        produtoJson => {
+          console.log(produtoJson);          
+        },
+        e => {
+          console.log(e.error);
+          this.mensagem = e.error;
+        } 
+      );
   }
 }
