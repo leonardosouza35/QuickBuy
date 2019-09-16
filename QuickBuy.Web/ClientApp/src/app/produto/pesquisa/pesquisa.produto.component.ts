@@ -31,6 +31,7 @@ export class PesquisaProdutoComponent implements OnInit{
   public adicionarProduto() {
     this.router.navigate(['/produto']);
   }
+
   public deletarProduto(produto: Produto) {
     var retorno = confirm("Deseja realmente deletar o produto selecionado ?");
     if (retorno == true) {
@@ -42,6 +43,11 @@ export class PesquisaProdutoComponent implements OnInit{
           console.log(e.errors);
       });
     }
+  }
+
+  public editarProduto(produto: Produto) {
+    sessionStorage.setItem('produtoSession', JSON.stringify(produto));
+    this.router.navigate(['/produto']);
   }
 
 }
