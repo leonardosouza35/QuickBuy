@@ -5,9 +5,8 @@
 
          <img class="card-top" src="../../../../../arquivos/{{p.nomeArquivo}}"
               style="width:200px; height:200px;" />         
-         <div class="card-body">
-           <h5 class="card-title">{{p.nome}}</h5>
-           <div class="card-text">{{p.descricao}}</div>
+         <div class="card-body">           
+           <div class="card-text">{{p.descricao | truncate: 50}}</div>
            <h5 class="h5">{{p.preco}}</h5>
          </div>
        </div>
