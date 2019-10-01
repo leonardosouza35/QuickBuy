@@ -26,6 +26,7 @@
 
   <ItemGroup>
     <None Remove="ClientApp\src\app\autorizacao\guarda.rotas.ts" />
+    <None Remove="ClientApp\src\app\loja\carrinho-compras\loja.carrinho.compras.ts" />
     <None Remove="ClientApp\src\app\loja\efetivar\loja.efetivar.component.css" />
     <None Remove="ClientApp\src\app\loja\efetivar\loja.efetivar.component.html" />
     <None Remove="ClientApp\src\app\loja\efetivar\loja.efetivar.component.ts" />
@@ -49,6 +50,7 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\autorizacao\guarda.rotas.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\loja\carrinho-compras\loja.carrinho.compras.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\loja\efetivar\loja.efetivar.component.css">
       <SubType>Code</SubType>
     </TypeScriptCompile>
