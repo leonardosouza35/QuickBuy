@@ -15,4 +15,13 @@ export class LojaEfetivarComponent implements OnInit {
         this.produtos = this.carrinhoCompras.obterProdutos();
     }
 
+    public atualizarPreco(produto: Produto, quantidade: number) {
+
+        if (!produto.precoOriginal) {
+            produto.precoOriginal = produto.preco;
+        }
+
+        produto.preco = produto.precoOriginal * quantidade;
+    }
+
 }
