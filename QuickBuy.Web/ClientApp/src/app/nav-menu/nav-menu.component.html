@@ -11,7 +11,7 @@
           <li class="nav-item" [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
             <a class="nav-link text-dark" [routerLink]='["/"]'>Home</a>
           </li>                 
-          <li class="nav-item" [routerLinkActive]='["link-active"]'>
+          <li class="nav-item" [routerLinkActive]='["link-active"]' *ngIf="usuario_administrador()">
             <a class="nav-link text-dark" [routerLink]='["/pesquisar-produto"]'>Produto</a>
           </li>
 
