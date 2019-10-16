@@ -21,6 +21,7 @@ export class LojaCarrinhoCompras {
         var produtoLocaStorage = localStorage.getItem("produtoLocaStorage");
         if (produtoLocaStorage)
             return JSON.parse(produtoLocaStorage);
+        return this.produtos;
     }
 
     public removerProduto(produto: Produto) {
