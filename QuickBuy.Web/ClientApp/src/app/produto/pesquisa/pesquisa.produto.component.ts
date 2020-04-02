@@ -9,27 +9,19 @@ import { Router } from "@angular/router";
   styleUrls: ["./pesquisa.produto.component.css"] 
 })
 export class PesquisaProdutoComponent implements OnInit{
-    
 
   public produtos: Produto[];
-  interval: any;
-  
-  ngOnInit(): void {
-    this.carregarProdutos();
-    this.interval = setInterval(() => { this.carregarProdutos() }, 1000);
+
+    ngOnInit(): void {
+        
   }
 
-  
   constructor(private produtoServico: ProdutoServico, private router: Router) {
-    
-  }
-
-  carregarProdutos() {
     this.produtoServico.obterTodosProdutos()
-       .subscribe(
+      .subscribe(
         produtos => {
-          this.produtos = produtos
-        },
+          this.produtos = produtos 
+      },
         e => {
           console.log(e.error);
 
