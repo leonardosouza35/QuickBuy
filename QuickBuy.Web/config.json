@@ -1,7 +1,7 @@
 {
   "ConnectionStrings": {
     "SqlServerConnection": "",
-    "QuickBuyDB": "server=remotemysql.com;uid=E9TF9THz50;pwd=4x8aGlY9pg;database=E9TF9THz50"
+    "QuickBuyDB": "server=mysql5019.site4now.net;uid=a57906_qbbase;pwd=abc123456;database=db_a57906_qbbase"
   }
 }
 
