@@ -1,5 +1,5 @@
-﻿<div class="text-center">
-  <form class="form-signin">
+<div class="text-center">
+  <form class="form-signin" #formSign="ngForm">
     <h1 class="h4 mb-2 login">Criar Conta</h1>
 
     <label for="inputEmail" class="sr-only">Email</label>
@@ -9,7 +9,7 @@
            [ngClass]="{
             'is-invalid':email.invalid && (email.dirty || email.touched),
             'is-valid':email.valid && (email.dirty || email.touched)
-           }"
+           }" 
            [(ngModel)]="usuario.email"
            #email="ngModel"
            email
@@ -76,7 +76,7 @@
         Sobre Nome é de preenchimento obrigatório
       </div>
     </div>
-    <button class="btn btn-primary btn-block mb-3" type="submit" (click)="cadastrar()" [disabled]="ativar_spinner">
+    <button class="btn btn-primary btn-block mb-3" type="submit" (click)="cadastrar()" [disabled]="!formSign.valid">
       <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="ativar_spinner"></span>
       Cadastrar
     </button>
